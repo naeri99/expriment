@@ -29,7 +29,13 @@ WORKDIR /home/sung
 # RUN sudo service supervisor stop
 
 # # Run flink commands
+COPY flink_inventory/flink-core-1.16.3.jar /home/sung/flink-1.16.3/lib/
 COPY flink_inventory/flink-streaming-java-1.16.3.jar /home/sung/flink-1.16.3/lib/
+COPY flink_inventory/flink-table-api-java-bridge-1.16.3.jar /home/sung/flink-1.16.3/lib/
+COPY flink_inventory/flink-java-1.16.3.jar /home/sung/flink-1.16.3/lib/
+COPY flink_inventory/flink-runtime-web-1.16.3.jar  /home/sung/flink-1.16.3/lib/
+
+
 
 # Expose any necessary ports
 EXPOSE 8081
