@@ -15,4 +15,4 @@ docker run --cpus="3" --memory="3g" --name=flink_3 -p 8083:8081 --network=kafka 
 
 docker run --cpus="3" --memory="3g" --name=flink_4 -p 8084:8081 --network=kafka -e MASTER=flink_1 -e WORKER=flink_4 -e RPC_PORT=flink_1 -d bumory1987/flink:workerv3
 
-docker run --cpus="3" --memory="3g" --name=backend_1 -d bumory1987/basic:0.03
+docker run --cpus="3" --memory="3g" --name=backend_1 --network=kafka -d bumory1987/basic:0.03
