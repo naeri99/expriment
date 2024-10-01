@@ -14,7 +14,7 @@ docker stop flink_3
 
 docker stop flink_4
 
-# docker stop backend_1
+docker stop backend_1
 
 docker rm kafkathree
 
@@ -30,7 +30,7 @@ docker rm flink_3
 
 docker rm flink_4
 
-docker stop backend_1
+docker rm backend_1
 
 
 
