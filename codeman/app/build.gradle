@@ -9,6 +9,7 @@ plugins {
 }
 
 dependencies {
+    implementation 'org.apache.flink:flink-java:1.16.3'
     implementation 'org.apache.flink:flink-clients:1.16.3'
     implementation 'org.apache.flink:flink-ml-lib_2.12:1.12.7'
     implementation 'org.apache.flink:flink-connector-kafka:1.16.3'
@@ -45,10 +46,22 @@ application {
     // Define the main class for the application.
     mainClass = 'org.example.app.App'
 
-    mainClass = 'org.example.app.App'
-
     applicationDefaultJvmArgs = [
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang.reflect=ALL-UNNAMED'
     ]
+}
+
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'org.example.app.App'  // Correct syntax for defining the Main-Class attribute
+        )
+    }
+}
+
+tasks.withType(JavaCompile) {
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
 }
