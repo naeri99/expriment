@@ -23,3 +23,6 @@ docker run -d --cpus="2" --memory="3g" --network kafka --name worker_1 --privile
 docker run -d --cpus="2" --memory="3g" --network kafka --name worker_2 --privileged -p 8092:8090 -e "SPARK_MASTER_HOST=master" -e "SPARK_MASTER_PORT=7077" -e "SPARK_MASTER_WEBUI_PORT=8083" -e "SPARK_WORKER_WEBUI_PORT=8090" -e "STORAGE=storage" bumory1987/sparks:workerv2
 
 docker run --cpus="3" --memory="3g" --name=backend_1 --network=kafka -d bumory1987/backend:0.07
+
+docker run -d --network kafka --privileged --name controller -p 8889:8889 -e "STORAGE=storage" bumory1987/sparks:ui
+

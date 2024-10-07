@@ -17,6 +17,10 @@ docker stop worker_2
 
 docker stop backend_1
 
+docker stop storage
+
+docker stop controller
+
 docker rm kafkathree
 
 docker rm kafkatwo
@@ -33,7 +37,9 @@ docker rm worker_2
 
 docker rm backend_1
 
+docker rm storage
 
+docker rm controller
 
 
 
